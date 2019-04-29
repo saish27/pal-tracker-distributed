@@ -1,4 +1,4 @@
-create table time_entries (
+create table time_entries_s (
   id bigint(20) not null auto_increment,
   project_id bigint(20),
   user_id bigint(20),

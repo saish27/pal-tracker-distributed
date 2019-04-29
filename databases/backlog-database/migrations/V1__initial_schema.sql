@@ -1,4 +1,4 @@
-create table stories (
+create table stories_s (
   id         bigint(20) not null auto_increment,
   project_id bigint(20),
   name       VARCHAR(255),
