@@ -1,4 +1,4 @@
-create table users_s (
+create table users (
   id   bigint(20) not null auto_increment,
   name VARCHAR(255),
 
@@ -8,19 +8,19 @@ create table users_s (
 engine = innodb
 default charset = utf8;
 
-create table accounts_s (
+create table accounts (
   id       bigint(20) not null auto_increment,
   owner_id bigint(20),
   name     VARCHAR(255),
 
   primary key (id),
   unique key name (name),
-  constraint foreign key (owner_id) references users_s (id)
+  constraint foreign key (owner_id) references users (id)
 )
 engine = innodb
 default charset = utf8;
 
-create table projects_s (
+create table projects(
   id         bigint(20) not null auto_increment,
   account_id bigint(20),
   name       VARCHAR(255),
@@ -28,7 +28,7 @@ create table projects_s (
 
   primary key (id),
   unique key name (name),
-  constraint foreign key (account_id) references accounts_s (id)
+  constraint foreign key (account_id) references accounts (id)
 )
 engine = innodb
 default charset = utf8;
