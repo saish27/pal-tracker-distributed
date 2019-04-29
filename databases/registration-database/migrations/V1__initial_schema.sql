@@ -15,7 +15,7 @@ create table accounts_s (
 
   primary key (id),
   unique key name (name),
-  constraint foreign key (owner_id) references users (id)
+  constraint foreign key (owner_id) references users_s (id)
 )
 engine = innodb
 default charset = utf8;
@@ -28,7 +28,7 @@ create table projects_s (
 
   primary key (id),
   unique key name (name),
-  constraint foreign key (account_id) references accounts (id)
+  constraint foreign key (account_id) references accounts_s (id)
 )
 engine = innodb
 default charset = utf8;
