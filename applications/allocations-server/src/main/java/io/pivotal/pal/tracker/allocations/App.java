@@ -10,7 +10,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestOperations;
 
 import java.util.TimeZone;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
+@EnableWebSecurity
+@EnableResourceServer
+@EnableOAuth2Client
 @EnableCircuitBreaker
 @SpringBootApplication
 @ComponentScan({"io.pivotal.pal.tracker.allocations", "io.pivotal.pal.tracker.restsupport"})
